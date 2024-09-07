@@ -76,22 +76,41 @@ body {
   margin-bottom: 40px;
   font-size: 2.5rem;
 }
+
+
 .card {
   box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Adds a subtle shadow around the card */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
+
 .card-img-top {
-  max-height: 180px; /* Adjust this value to fit the image properly in the card */
+  max-height: 300px; /* Adjust this value to fit the image properly in the card */
   object-fit: cover; /* This makes sure the image covers the area properly */
 }
+
 .card-body {
+  flex-grow: 1;
   padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
+
 .card-title {
   font-size: 1.25rem;
 }
+
 .card-text {
   margin-bottom: 15px;
+  flex-grow: 1;
 }
+
+.btn-secondary {
+  margin-top: auto; /* Ensures button stays at the bottom of the card */
+}
+
 
 /* Additional CSS for Skills Section */
 .skills-section h2 {
@@ -100,29 +119,47 @@ body {
 }
 .skills-section .card {
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
+
 .skills-section .card-img-top {
   padding: 20px; /* Add padding around your images if needed */
   background-color: #f8f9fa; /* Adjust the background color if your images have transparent areas */
   height: 180px; /* Fixed height for consistency */
   object-fit: contain; /* This will make sure the image is scaled properly within the container */
 }
+
 .skills-section .card-body {
+  flex-grow: 1;
   padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
+
 .skills-section .card-title {
   font-size: 1.25rem;
   margin-bottom: 15px;
 }
+
+.skills-section .card-text {
+  flex-grow: 1;
+}
+
 .skills-section .btn-outline-primary {
   color: #007bff;
   border-color: #007bff;
+  margin-top: auto; /* Ensures the button stays at the bottom */
 }
+
 .skills-section .btn-outline-primary:hover {
   color: #fff;
   background-color: #007bff;
   border-color: #007bff;
 }
+
 
 /* Additional CSS for Contact Section */
 .contact-section {
@@ -221,40 +258,269 @@ html {
       <!-- Project 1 -->
       <div class="col-md-4 mb-4">
         <div class="card">
-          <img src="images/projects/1.jpg" class="card-img-top" alt="Project 1">
+          <img src="images/projects/1.jfif" class="card-img-top" alt="Project 1">
           <div class="card-body">
-            <h5 class="card-title">Project 1</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed nisl erat. Sed et purus ornare, eleifend tellus ut, fermentum arcu.</p>
-            <a href="#" class="btn btn-secondary">Source Code</a>
+            <h5 class="card-title"><b>Academic Achievement Metric Estimator</b></h5>
+            <p class="card-text">The project predicts student score using a web interface built with Python, Flask, and machine learning, deployed on AWS with CI/CD via GitHub Actions using modular coding approach.</p>
+            <a href="https://github.com/Gouranga-GH/ETEP-ModularCoding-GitHubActions-AWS.git" class="btn btn-secondary">Source Code</a>
           </div>
         </div>
       </div>
       <!-- Project 2 -->
       <div class="col-md-4 mb-4">
         <div class="card">
-          <img src="images/projects/2.jpg" class="card-img-top" alt="Project 2">
+          <img src="images/projects/2.jfif" class="card-img-top" alt="Project 2">
           <div class="card-body">
-            <h5 class="card-title">Project 2</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed nisl erat. Sed et purus ornare, eleifend tellus ut, fermentum arcu.</p>
-            <a href="#" class="btn btn-secondary">Source Code</a>
+            <h5 class="card-title"><b>Text Summarization</b></h5>
+            <p class="card-text">The project uses FastAPI, Transformers, and Hugging Face models to create a text summarization system with pipelines for data handling, model training, and evaluation, deployed on AWS with CI/CD via GitHub Actions, Docker using modular coding approach.</p>
+            <a href="https://github.com/Gouranga-GH/ETEP-Modular-Coding-Docker-AWS.git" class="btn btn-secondary">Source Code</a>
           </div>
         </div>
       </div>
       <!-- Project 3 -->
       <div class="col-md-4 mb-4">
         <div class="card">
-          <img src="images/projects/3.jpg" class="card-img-top" alt="Project 3">
+          <img src="images/projects/3.jfif" class="card-img-top" alt="Project 3">
           <div class="card-body">
-            <h5 class="card-title">Project 3</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed nisl erat. Sed et purus ornare, eleifend tellus ut, fermentum arcu.</p>
-            <a href="#" class="btn btn-secondary">Source Code</a>
+            <h5 class="card-title"><b>Wine Quality Estimator</b></h5>
+            <p class="card-text">The project features an end-to-end machine learning pipeline with MLflow for experiment tracking, covering data handling, model training, and evaluation, plus a Flask app for wine quality prediction, deployed on AWS with CI/CD via GitHub Actions, Docker using modular coding approach.</p>
+            <a href="https://github.com/Gouranga-GH/ETEP-MLOps-MLflow-AWS.git" class="btn btn-secondary">Source Code</a>
           </div>
         </div>
       </div>
-   
+      <!-- Project 4 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/4.jfif" class="card-img-top" alt="Project 4">
+          <div class="card-body">
+            <h5 class="card-title"><b>MyBay Shopping App - Product Recommendation System</b></h5>
+            <p class="card-text">The project implements a content-based recommendation system for the MyBay shopping app using Flask, SQLAlchemy, and machine learning, with user authentication and product exploration features, added other experimental recommendation systems.</p>
+            <a href="https://github.com/Gouranga-GH/R-S-EC.git" class="btn btn-secondary">Source Code</a>
+          </div>
+        </div>
+      </div>
+      <!-- Project 5 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/5.jfif" class="card-img-top" alt="Project 5">
+          <div class="card-body">
+            <h5 class="card-title"><b>O2Tel Customer Churn Analysis</b></h5>
+            <p class="card-text">The project analyzes telecom customer churn using SQL, Power BI, and machine learning, featuring data preprocessing, EDA, predictive analysis and re-visualisation, and an interactive Power BI dashboard to gather actionable insights.</p>
+            <a href="https://github.com/Gouranga-GH/sql_pbi_ml_tcc.git" class="btn btn-secondary">Source Code</a>
+          </div>
+        </div>
+      </div>
+      <!-- Project 6 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/6.jfif" class="card-img-top" alt="Project 6">
+          <div class="card-body">
+            <h5 class="card-title"><b>Twiggy Instamart Sales Analysis</b></h5>
+            <p class="card-text">The project conducts a comprehensive sales performance analysis for Twiggy Instamart using Power BI to gain insights into KPIs and identify areas for improvement via actionable insights.</p>
+            <a href="https://github.com/Gouranga-GH/pbi_tida.git" class="btn btn-secondary">Source Code</a>
+          </div>
+        </div>
+      </div>
+      <!-- Project 7 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/7.jfif" class="card-img-top" alt="Project 7">
+          <div class="card-body">
+            <h5 class="card-title"><b>Global Mart: Retail Orders E-commerce Analysis</b></h5>
+            <p class="card-text">The project offers an end-to-end analysis of a global e-commerce dataset (2022-2023) using Python and SQL, providing actionable insights for optimizing business strategies.</p>
+            <a href="https://github.com/Gouranga-GH/sql_py_gm_sales.git" class="btn btn-secondary">Source Code</a>
+          </div>
+        </div>
+      </div>
+      <!-- Project 8 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/8.jfif" class="card-img-top" alt="Project 8">
+          <div class="card-body">
+            <h5 class="card-title"><b>OTT Content Analysis</b></h5>
+            <p class="card-text">The project analyzes given OTT’s content catalog to identify trends, popular genres, and opportunities for future content development through actionable insights.</p>
+            <a href="https://github.com/Gouranga-GH/sql_py_ott_nx.git" class="btn btn-secondary">Source Code</a>
+          </div>
+        </div>
+      </div>
+      <!-- Project 9 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/9.jfif" class="card-img-top" alt="Project 9">
+          <div class="card-body">
+            <h5 class="card-title"><b>Target's Operations Analysis</b></h5>
+            <p class="card-text">The project uses the Target Brazil's operational information to generate insights for enhancing Target’s strategic decision-making, covering customer orders, payments, shipping, product attributes, and demographics.</p>
+            <a href="https://github.com/Gouranga-GH/sql_py_retail_tt.git" class="btn btn-secondary">Source Code</a>
+          </div>
+        </div>
+      </div>
+      <!-- Project 10 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/10.jpg" class="card-img-top" alt="Project 10">
+          <div class="card-body">
+            <h5 class="card-title"><b>PyPI Publishing: Synthetic Data Generator</b></h5>
+            <p class="card-text">The package generates synthetic datasets with continuous, categorical, time-series features and noise, ideal for data scientists and engineers needing data for testing, modeling, or privacy concerns.</p>
+            <a href="https://github.com/Gouranga-GH/custom_pypi_sdg.git" class="btn btn-secondary">Source Code</a>
+          </div>
+        </div>
+      </div>
+      <!-- Project 11 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/11.jpg" class="card-img-top" alt="Project 11">
+          <div class="card-body">
+            <h5 class="card-title"><b>Starducks Coffee Sales Dashboard Using MS-Excel</b></h5>
+            <p class="card-text">The project analyzes monthly sales trends, product category performance, and store performance for Starducks Coffee to identify improvement areas and growth opportunities via gathered actionable insights.</p>
+            <a href="https://github.com/Gouranga-GH/Excel_CF_Sales.git" class="btn btn-secondary">Source Code</a>
+          </div>
+        </div>
+      </div>
+      <!-- Project 12 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/12.jpg" class="card-img-top" alt="Project 12">
+          <div class="card-body">
+            <h5 class="card-title"><b>Ecommerce Web Scraping</b></h5>
+            <p class="card-text">The project involves two web scraping tasks to extract product and review data from an eCommerce platform, performed in separate Jupyter notebooks and saved to CSV files for analysis.</p>
+            <a href="https://github.com/Gouranga-GH/WS_AMZN.git" class="btn btn-secondary">Source Code</a>
+          </div>
+        </div>
+      </div>
+      <!-- Project 13 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/13.jpg" class="card-img-top" alt="Project 13">
+          <div class="card-body">
+            <h5 class="card-title"><b>Statistics-In-Action</b></h5>
+            <p class="card-text">The project aims to solve real-world business problems using ML and applied statistics, providing domain experience with industry datasets and developing data-driven insights for decision-making.</p>
+            <a href="https://github.com/Gouranga-GH/WS_AMZN.git" class="btn btn-secondary">Source Code</a>
+          </div>
+        </div>
+      </div>
+      <!-- Project 14 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/14.jpg" class="card-img-top" alt="Project 14">
+          <div class="card-body">
+            <h5 class="card-title"><b>Supervised Learning - Use cases</b></h5>
+            <p class="card-text">The project aims to build predictive machine learning models using supervised learning techniques on industry datasets from healthcare and banking.</p>
+            <a href="https://github.com/Gouranga-GH/sl_use_cases_hc_bk.git" class="btn btn-secondary">Source Code</a>
+          </div>
+        </div>
+      </div>
+      <!-- Project 15 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/15.jpg" class="card-img-top" alt="Project 15">
+          <div class="card-body">
+            <h5 class="card-title"><b>Prediction via Ensemble Methods</b></h5>
+            <p class="card-text">The telecom company aims to predict customer churn using historical data to design effective retention strategies. The prediction to be implemented using ensemble methods</p>
+            <a href="https://github.com/Gouranga-GH/tcc_ml_ensemble.git" class="btn btn-secondary">Source Code</a>
+          </div>
+        </div>
+      </div>
+      <!-- Project 16 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/16.jpg" class="card-img-top" alt="Project 16">
+          <div class="card-body">
+            <h5 class="card-title"><b>Unsupervised Learning - Use Cases</b></h5>
+            <p class="card-text">The project focuses on solving industry problems using techniques, emphasizing unsupervised learning, synthetic data, clustering, dimensionality reduction, and practical implementations.</p>
+            <a href="https://github.com/Gouranga-GH/ul_use_cases_5.git" class="btn btn-secondary">Source Code</a>
+          </div>
+        </div>
+      </div>
+      <!-- Project 17 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/17.jpg" class="card-img-top" alt="Project 17">
+          <div class="card-body">
+            <h5 class="card-title"><b>Manufacturing Yield Prediction: Utilising Feature Engineering</b></h5>
+            <p class="card-text">The project is about developing a classifier to predict production outcomes in semiconductor manufacturing by identifying the most relevant signals from noisy data.</p>
+            <a href="https://github.com/Gouranga-GH/fe_smyp.git" class="btn btn-secondary">Source Code</a>
+          </div>
+        </div>
+      </div>
+      <!-- Project 18 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/18.jpg" class="card-img-top" alt="Project 18">
+          <div class="card-body">
+            <h5 class="card-title"><b>Neural Network Approach to Classification and Regression</b></h5>
+            <p class="card-text">The project consists of solving two distinct industry-related challenges using basic neural networks which would be regression and classification.</p>
+            <a href="https://github.com/Gouranga-GH/nnp_uc_2.git" class="btn btn-secondary">Source Code</a>
+          </div>
+        </div>
+      </div>
+      <!-- Project 19 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/19.jpg" class="card-img-top" alt="Project 19">
+          <div class="card-body">
+            <h5 class="card-title"><b>NLP Text Classification & Semi-Rule Based Chatbot</b></h5>
+            <p class="card-text">The project is to develop a multi-label text classifier to predict blogger attributes and an interactive chatbot for customer support automation.</p>
+            <a href="https://github.com/Gouranga-GH/nlp_uc_2.git" class="btn btn-secondary">Source Code</a>
+          </div>
+        </div>
+      </div>
+      <!-- Project 20 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/20.jpg" class="card-img-top" alt="Project 20">
+          <div class="card-body">
+            <h5 class="card-title"><b>NLP Sequential Models</b></h5>
+            <p class="card-text">The project is to develop two sequential NLP models: one for sentiment analysis of IMDB reviews and another for sarcasm detection in news headlines using a bidirectional LSTM network.</p>
+            <a href="https://github.com/Gouranga-GH/nlp_sequential_uc_2.git" class="btn btn-secondary">Source Code</a>
+          </div>
+        </div>
+      </div>
+      <!-- Project 21 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/21.jpg" class="card-img-top" alt="Project 21">
+          <div class="card-body">
+            <h5 class="card-title"><b>Image Classification Using ML and Neural Networks</b></h5>
+            <p class="card-text">The project is to develop an image classifier to accurately identify plant species from photographs for botanical research.</p>
+            <a href="https://github.com/Gouranga-GH/nnp_uc_2.git" class="btn btn-secondary">Source Code</a>
+          </div>
+        </div>
+      </div>
+      <!-- Project 22 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/19.jpg" class="card-img-top" alt="Project 19">
+          <div class="card-body">
+            <h5 class="card-title"><b>NLP Text Classification & Semi-Rule Based Chatbot</b></h5>
+            <p class="card-text">The project is to develop a multi-label text classifier to predict blogger attributes and an interactive chatbot for customer support automation.</p>
+            <a href="https://github.com/Gouranga-GH/nlp_uc_2.git" class="btn btn-secondary">Source Code</a>
+          </div>
+        </div>
+      </div>
+      <!-- Project 23 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/20.jpg" class="card-img-top" alt="Project 20">
+          <div class="card-body">
+            <h5 class="card-title"><b>NLP Sequential Models</b></h5>
+            <p class="card-text">The project is to develop two sequential NLP models: one for sentiment analysis of IMDB reviews and another for sarcasm detection in news headlines using a bidirectional LSTM network.</p>
+            <a href="https://github.com/Gouranga-GH/nlp_sequential_uc_2.git" class="btn btn-secondary">Source Code</a>
+          </div>
+        </div>
+      </div>
+      <!-- Project 24 -->
+      <div class="col-md-4 mb-4">
+        <div class="card">
+          <img src="images/projects/21.jpg" class="card-img-top" alt="Project 21">
+          <div class="card-body">
+            <h5 class="card-title"><b>Image Classification Using ML and Neural Networks</b></h5>
+            <p class="card-text">The project is to develop an image classifier to accurately identify plant species from photographs for botanical research.</p>
+            <a href="https://github.com/Gouranga-GH/nnp_uc_2.git" class="btn btn-secondary">Source Code</a>
+          </div>
+        </div>
+      </div>
 
-    </div>
-
+  
   </div>
 </section>
 
@@ -270,7 +536,7 @@ html {
           <img src="images/skills/1.png" class="card-img-top" alt="Python">
           <div class="card-body">
             <h5 class="card-title">Python</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed nisl erat. Sed et purus ornare, eleifend tellus ut, fermentum arcu.</p>
+            <p class="card-text"></p>
           </div>
         </div>
       </div>
