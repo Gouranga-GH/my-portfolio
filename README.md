@@ -4,7 +4,7 @@
 Welcome to my Data Science portfolio, where I showcase my journey from construction management to tech and data science! Through various projects, skills, and use cases, I aim to demonstrate my expertise in machine learning, AI, and statistical modeling, while sharing valuable insights and knowledge in the field.
 
 ## Portfolio Website
-The website is hosted via GitHub Pages and can be viewed [here](https://your-github-username.github.io/portfolio). It covers a detailed introduction about me, the projects I've worked on, the skills I possess, and my contact details.
+The website is hosted via GitHub Pages and can be viewed [here](https://gouranga-gh.github.io/my-portfolio/). It covers a detailed introduction about me, the projects I've worked on, the skills I possess, and my contact details.
 
 ### Sections
 1. **About Me**:
