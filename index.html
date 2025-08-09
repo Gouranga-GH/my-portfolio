@@ -8,6 +8,8 @@
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -1033,7 +1035,7 @@ body {
 </head>
 <body>
     <!-- Loading Screen -->
-    <div class="loading" id="loading">
+    <div class="loading" id="loading" aria-hidden="true" role="status">
         <div class="spinner"></div>
     </div>
 
@@ -1082,6 +1084,7 @@ body {
                 <div class="cta-buttons" data-aos="fade-up" data-aos-delay="600">
                     <a href="#projects" class="btn btn-custom btn-primary-custom mr-3">View Projects</a>
                     <a href="#contact" class="btn btn-custom btn-outline-custom">Get In Touch</a>
+                    <a href="https://myportfoliocb.streamlit.app/" target="_blank" rel="noopener" class="btn btn-custom btn-outline-custom ml-3">Boot Up My Digital Twin</a>
                 </div>
             </div>
   </div>
@@ -1744,57 +1747,48 @@ body {
 </section>
 
 <!-- Sticky Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-custom_col_1 fixed-top">
-  <div class="container">
-    <a class="navbar-brand" href="#">Gouranga Jha | Portfolio</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#projects">Projects</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#skills">Skills</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#contact">Contact</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+ 
 
 
 <!-- Bootstrap JS and dependencies (jQuery and Popper) -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.9.5/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <!-- AOS Animation Library -->
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 <script>
-    // Initialize AOS animations
-    AOS.init({
-        duration: 1000,
-        easing: 'ease-in-out',
-        once: true,
-        mirror: false
+    // Helper: hide loading screen with safety timeouts
+    function hideLoadingScreen() {
+        const loading = document.getElementById('loading');
+        if (loading && !loading.classList.contains('hidden')) {
+            loading.classList.add('hidden');
+        }
+    }
+
+    // Hide loader earlier on DOM ready (fallbacks ensure it doesn't stick)
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(hideLoadingScreen, 600);
+    });
+
+    // Final fallback: ensure loader is gone even on slow networks
+    setTimeout(hideLoadingScreen, 4000);
+
+    // Initialize AOS animations after DOM is ready
+    document.addEventListener('DOMContentLoaded', function() {
+        if (window.AOS) {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true,
+                mirror: false
+            });
+        }
     });
 
     // Loading screen
     window.addEventListener('load', function() {
-        const loading = document.getElementById('loading');
-        setTimeout(() => {
-            loading.classList.add('hidden');
-        }, 1000);
+        setTimeout(hideLoadingScreen, 300);
     });
 
     // Navbar scroll effect
@@ -1826,7 +1820,10 @@ body {
     // Particle effect
     function createParticles() {
         const particlesContainer = document.getElementById('particles');
-        const particleCount = 50;
+        if (!particlesContainer) return;
+        const isSmallScreen = window.matchMedia('(max-width: 576px)').matches;
+        const isMediumScreen = window.matchMedia('(max-width: 992px)').matches;
+        const particleCount = isSmallScreen ? 0 : (isMediumScreen ? 12 : 20);
 
         for (let i = 0; i < particleCount; i++) {
             const particle = document.createElement('div');
@@ -1865,13 +1862,13 @@ body {
     }
 
     // Initialize typing effect when page loads
-    window.addEventListener('load', function() {
+    document.addEventListener('DOMContentLoaded', function() {
         const heroTitle = document.querySelector('.hero-title');
         if (heroTitle) {
             const originalText = heroTitle.textContent;
             setTimeout(() => {
-                typeWriter(heroTitle, originalText, 150);
-            }, 2000);
+                typeWriter(heroTitle, originalText, 120);
+            }, 1200);
         }
     });
 
@@ -1957,6 +1954,20 @@ body {
     if (skillsSection) {
         skillsObserver.observe(skillsSection);
     }
+
+    // Progressive image enhancements
+    document.addEventListener('DOMContentLoaded', function() {
+        // Lazy-load all images and set async decoding
+        document.querySelectorAll('img').forEach(img => {
+            if (!img.hasAttribute('loading')) img.setAttribute('loading', 'lazy');
+            if (!img.hasAttribute('decoding')) img.setAttribute('decoding', 'async');
+        });
+        // Stabilize social icon layout
+        document.querySelectorAll('.social-icon').forEach(icon => {
+            icon.setAttribute('width', '50');
+            icon.setAttribute('height', '50');
+        });
+    });
 
     // Add ripple effect to buttons
     document.querySelectorAll('.btn').forEach(button => {
@@ -2134,11 +2145,12 @@ body {
     }
 
     // Apply throttling to scroll events
+    // Reduce scroll handler frequency for performance
     const throttledScrollHandler = throttle(() => {
-        // Scroll-based animations here
-    }, 16); // ~60fps
+        // reserved for future lightweight scroll work
+    }, 64); // ~15fps
 
-    window.addEventListener('scroll', throttledScrollHandler);
+    window.addEventListener('scroll', throttledScrollHandler, { passive: true });
 </script>
 </body>
 </html>
